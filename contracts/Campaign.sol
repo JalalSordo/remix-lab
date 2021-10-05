@@ -29,7 +29,7 @@ contract Campaign{
         manager = msg.sender;
     }
     // if uou want to access to mesage value you need to state it spayable which is the amoutn of ether sent in the trns
-    function enter() public payable {
+    function contribute() public payable {
         require(msg.value > minimumContrbution);
         approvers.push(msg.sender);
     }

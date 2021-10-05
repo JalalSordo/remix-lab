@@ -165,9 +165,9 @@
 	},
 	"sources": {
 		"contracts/Campaign.sol": {
-			"keccak256": "0x43b083e1db91e2e195efb07208132dad60e66d3e94bd525d84ee34f245a482d7",
+			"keccak256": "0x37028dcba6be20f4e2fcd08a84ead78e8d1de7f4f327d917184631266f00081b",
 			"urls": [
-				"bzzr://8e2a35f08bb96884d4d36ef7f5a0f2d9ff0f656b0a716721d1aa5f6cdd9f39e8"
+				"bzzr://77bb2d993c9b466529f8edf945cd6963310017c54873fd9d53acf4d653a3e161"
 			]
 		}
 	},

@@ -20,7 +20,7 @@ contract Campaign{
    //list of people who contributed to the project
    address[] public approvers ;
    
-   //list of all requestes created in teh contract
+   //list of all requestes created in the contract
    Request[] public requests ;
    
      
@@ -28,6 +28,7 @@ contract Campaign{
         minimumContrbution = minimum;
         manager = msg.sender;
     }
+    
     // if uou want to access to mesage value you need to state it spayable which is the amoutn of ether sent in the trns
     function contribute() public payable {
         require(msg.value > minimumContrbution);
@@ -35,6 +36,7 @@ contract Campaign{
     }
     
      function createRequest( string description, uint256 value, address recipient) public onlyManagerCanCall {
+         //custom loacl variables must explicily get decalred as in memory and not storage, case of struct
         Request memory request=Request({
             description:description,
             value:value,

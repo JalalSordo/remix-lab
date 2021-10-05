@@ -3,25 +3,18 @@ pragma solidity ^0.4.17;
 
 contract Campaign{
    
-    int[] public numbers1;
-    int[] public numbers2;
+   
+     struct Request{
+         string description;
+         uint256 value;
+         
+     }
+     
      
     function Campaign() public {
-        numbers1.push(20);
-        numbers1.push(32);
-        changeArrayMemory(numbers1);
-        
-        numbers2.push(20);
-        numbers2.push(32);
-        changeArrayStorage(numbers2);
+  
     }
 
-    function changeArrayMemory (int [] memory array) private{
-	    array[0]=1;
-    }
-    
-    function changeArrayStorage (int [] storage array) private{
-	    array[0]=1;
-    }
+   
 
 }

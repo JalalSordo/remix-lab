@@ -6,12 +6,17 @@
 	"output": {
 		"abi": [
 			{
-				"constant": false,
+				"constant": true,
 				"inputs": [],
-				"name": "Lottery",
-				"outputs": [],
+				"name": "getCurrentPrize",
+				"outputs": [
+					{
+						"name": "",
+						"type": "uint256"
+					}
+				],
 				"payable": false,
-				"stateMutability": "nonpayable",
+				"stateMutability": "view",
 				"type": "function"
 			},
 			{
@@ -38,26 +43,26 @@
 				"type": "function"
 			},
 			{
-				"constant": true,
-				"inputs": [],
-				"name": "getCurrentBalance",
-				"outputs": [
-					{
-						"name": "",
-						"type": "uint256"
-					}
-				],
-				"payable": false,
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
 				"constant": false,
 				"inputs": [],
 				"name": "enter",
 				"outputs": [],
 				"payable": true,
 				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [],
+				"name": "getAllPlayers",
+				"outputs": [
+					{
+						"name": "",
+						"type": "address[]"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
 				"type": "function"
 			},
 			{
@@ -78,6 +83,26 @@
 				"payable": false,
 				"stateMutability": "view",
 				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [],
+				"name": "lastWinner",
+				"outputs": [
+					{
+						"name": "",
+						"type": "address"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "constructor"
 			}
 		],
 		"devdoc": {
@@ -89,7 +114,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"contracts/Lottery.sol": "Lottrey"
+			"contracts/Lottery.sol": "Lottery"
 		},
 		"evmVersion": "byzantium",
 		"libraries": {},
@@ -101,9 +126,9 @@
 	},
 	"sources": {
 		"contracts/Lottery.sol": {
-			"keccak256": "0xb937c7b675ce3d187d8f9f314cbbcfc73ae628ffd345461375d8173ba4feff8d",
+			"keccak256": "0x547556e816ad1fb5f14261a3773698f06680dbe403b3f0f20fe4fa9f463670c7",
 			"urls": [
-				"bzzr://ea0d87c8e2bd13f78c03d977a93c8299493bbd28933a9d1256b13b234ad877fd"
+				"bzzr://70c1616b60a386d6f3033e6aa01eb9dca5f37821aa327d4f65715bf554cfe95f"
 			]
 		}
 	},

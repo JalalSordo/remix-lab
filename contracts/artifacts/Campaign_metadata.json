@@ -6,44 +6,6 @@
 	"output": {
 		"abi": [
 			{
-				"constant": true,
-				"inputs": [
-					{
-						"name": "",
-						"type": "uint256"
-					}
-				],
-				"name": "numbers1",
-				"outputs": [
-					{
-						"name": "",
-						"type": "int256"
-					}
-				],
-				"payable": false,
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"constant": true,
-				"inputs": [
-					{
-						"name": "",
-						"type": "uint256"
-					}
-				],
-				"name": "numbers2",
-				"outputs": [
-					{
-						"name": "",
-						"type": "int256"
-					}
-				],
-				"payable": false,
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
 				"inputs": [],
 				"payable": false,
 				"stateMutability": "nonpayable",
@@ -71,9 +33,9 @@
 	},
 	"sources": {
 		"contracts/Campaign.sol": {
-			"keccak256": "0x8e6a73b8b6f822a81a173855608ec598ce18c987d188cea8298e7b0b35c42721",
+			"keccak256": "0xcc70343e09200081e9ac582405c895cbb6e261090c4bd68fdcc840984567c854",
 			"urls": [
-				"bzzr://f1a0f067977871cbb92a3e085b59ffc308c85f67d137215c1d176aaa4f1bc6e5"
+				"bzzr://6efe0e846d6b768f2e55f21f2a5b121a3822aa1150f8fc3024dba8da48ab60ec"
 			]
 		}
 	},

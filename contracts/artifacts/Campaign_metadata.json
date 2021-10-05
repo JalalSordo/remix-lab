@@ -6,7 +6,139 @@
 	"output": {
 		"abi": [
 			{
+				"constant": false,
 				"inputs": [],
+				"name": "approveRequest",
+				"outputs": [],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [],
+				"name": "minimumContrbution",
+				"outputs": [
+					{
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [],
+				"name": "manager",
+				"outputs": [
+					{
+						"name": "",
+						"type": "address"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [
+					{
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "requests",
+				"outputs": [
+					{
+						"name": "description",
+						"type": "string"
+					},
+					{
+						"name": "value",
+						"type": "uint256"
+					},
+					{
+						"name": "recipient",
+						"type": "address"
+					},
+					{
+						"name": "complete",
+						"type": "bool"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": false,
+				"inputs": [
+					{
+						"name": "description",
+						"type": "string"
+					},
+					{
+						"name": "value",
+						"type": "uint256"
+					},
+					{
+						"name": "recipient",
+						"type": "address"
+					}
+				],
+				"name": "createRequest",
+				"outputs": [],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"constant": false,
+				"inputs": [],
+				"name": "finalizeRequest",
+				"outputs": [],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [
+					{
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "approvers",
+				"outputs": [
+					{
+						"name": "",
+						"type": "address"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": false,
+				"inputs": [],
+				"name": "enter",
+				"outputs": [],
+				"payable": true,
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"name": "minimum",
+						"type": "uint256"
+					}
+				],
 				"payable": false,
 				"stateMutability": "nonpayable",
 				"type": "constructor"
@@ -33,9 +165,9 @@
 	},
 	"sources": {
 		"contracts/Campaign.sol": {
-			"keccak256": "0xcc70343e09200081e9ac582405c895cbb6e261090c4bd68fdcc840984567c854",
+			"keccak256": "0x52dd5cb725faeb7a5231e74084da73da0edb6b6de3886ceae612dd3d6fb59725",
 			"urls": [
-				"bzzr://6efe0e846d6b768f2e55f21f2a5b121a3822aa1150f8fc3024dba8da48ab60ec"
+				"bzzr://8844eb5511c17526c0f021cd3968f33fa8248a428e8483be4f1fd55f04fbe849"
 			]
 		}
 	},

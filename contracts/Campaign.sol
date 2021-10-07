@@ -5,9 +5,11 @@ contract Campaign{
     
     struct Request{
          string description;
-         uint256 value;
+         uint amount;
          address recipient;
          bool complete;
+         mapping(address=>bool) approvals;
+         uint approvalCount;
          
      }
      
@@ -15,16 +17,16 @@ contract Campaign{
    address public manager;
    
    //necessary to make sure you have diffrent treshhold of contribution base don the project
-   uint256 public minimumContrbution ;
+   uint public minimumContrbution ;
    
    //list of people who contributed to the project
-   address[] public approvers ;
+   mapping(address=>bool) public approvers;
    
    //list of all requestes created in the contract
    Request[] public requests ;
    
      
-    constructor (uint256 minimum) public {
+    constructor (uint minimum) public {
         minimumContrbution = minimum;
         manager = msg.sender;
     }
@@ -32,26 +34,38 @@ contract Campaign{
     // if uou want to access to mesage value you need to state it spayable which is the amoutn of ether sent in the trns
     function contribute() public payable {
         require(msg.value > minimumContrbution);
-        approvers.push(msg.sender);
+        approvers[msg.sender]=true;
     }
     
-     function createRequest( string description, uint256 value, address recipient) public onlyManagerCanCall {
+     function createRequest( string description, uint amount, address recipient) public onlyManagerCanCall {
          //custom loacl variables must explicily get decalred as in memory and not storage, case of struct
         Request memory request=Request({
             description:description,
-            value:value,
+            amount:amount,
             recipient:recipient,
-            complete:false
+            complete:false,
+            approvalCount:0
         });
         requests.push(request);
 
     }
     
-    function approveRequest() public onlyManagerCanCall {
-        //TODO
+    function approveRequest(uint requestIndex) public  {
+        //first check if this person has the right to vote, must be in the map of approvers (people who contributed)
+        require(approvers[msg.sender]);
+        
+        //check if this person haven't voted before
+        require(!requests[requestIndex].approvals[msg.sender]);
+        
+        //add a person to approvers
+        requests[requestIndex].approvals[msg.sender]=true;
+        
+        //increment teh approval count of teh request
+        requests[requestIndex].approvalCount++;
+        
     }
     
-    function finalizeRequest( )  public onlyManagerCanCall {
+    function finalizeRequest( )  public view onlyManagerCanCall {
         //TODO
     }
     

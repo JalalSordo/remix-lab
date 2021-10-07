@@ -6,12 +6,22 @@
 	"output": {
 		"abi": [
 			{
-				"constant": false,
-				"inputs": [],
-				"name": "approveRequest",
-				"outputs": [],
+				"constant": true,
+				"inputs": [
+					{
+						"name": "",
+						"type": "address"
+					}
+				],
+				"name": "approvers",
+				"outputs": [
+					{
+						"name": "",
+						"type": "bool"
+					}
+				],
 				"payable": false,
-				"stateMutability": "nonpayable",
+				"stateMutability": "view",
 				"type": "function"
 			},
 			{
@@ -57,7 +67,7 @@
 						"type": "string"
 					},
 					{
-						"name": "value",
+						"name": "amount",
 						"type": "uint256"
 					},
 					{
@@ -67,6 +77,10 @@
 					{
 						"name": "complete",
 						"type": "bool"
+					},
+					{
+						"name": "approvalCount",
+						"type": "uint256"
 					}
 				],
 				"payable": false,
@@ -81,7 +95,7 @@
 						"type": "string"
 					},
 					{
-						"name": "value",
+						"name": "amount",
 						"type": "uint256"
 					},
 					{
@@ -96,29 +110,10 @@
 				"type": "function"
 			},
 			{
-				"constant": false,
+				"constant": true,
 				"inputs": [],
 				"name": "finalizeRequest",
 				"outputs": [],
-				"payable": false,
-				"stateMutability": "nonpayable",
-				"type": "function"
-			},
-			{
-				"constant": true,
-				"inputs": [
-					{
-						"name": "",
-						"type": "uint256"
-					}
-				],
-				"name": "approvers",
-				"outputs": [
-					{
-						"name": "",
-						"type": "address"
-					}
-				],
 				"payable": false,
 				"stateMutability": "view",
 				"type": "function"
@@ -130,6 +125,20 @@
 				"outputs": [],
 				"payable": true,
 				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"constant": false,
+				"inputs": [
+					{
+						"name": "requestIndex",
+						"type": "uint256"
+					}
+				],
+				"name": "approveRequest",
+				"outputs": [],
+				"payable": false,
+				"stateMutability": "nonpayable",
 				"type": "function"
 			},
 			{
@@ -165,9 +174,9 @@
 	},
 	"sources": {
 		"contracts/Campaign.sol": {
-			"keccak256": "0x37028dcba6be20f4e2fcd08a84ead78e8d1de7f4f327d917184631266f00081b",
+			"keccak256": "0x49ee87ea1d6c0bacc8cee79c6ebf6d1209a0ebefd22c8675981e8fc92fccf5a4",
 			"urls": [
-				"bzzr://77bb2d993c9b466529f8edf945cd6963310017c54873fd9d53acf4d653a3e161"
+				"bzzr://45505431450964e0b56d90e1d19e04d2500f98943b54067517e8208ea5898900"
 			]
 		}
 	},

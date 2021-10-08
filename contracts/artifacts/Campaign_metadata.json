@@ -6,6 +6,20 @@
 	"output": {
 		"abi": [
 			{
+				"constant": false,
+				"inputs": [
+					{
+						"name": "requestIndex",
+						"type": "uint256"
+					}
+				],
+				"name": "finalizeRequest",
+				"outputs": [],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
 				"constant": true,
 				"inputs": [
 					{
@@ -88,6 +102,20 @@
 				"type": "function"
 			},
 			{
+				"constant": true,
+				"inputs": [],
+				"name": "approversCount",
+				"outputs": [
+					{
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
 				"constant": false,
 				"inputs": [
 					{
@@ -107,15 +135,6 @@
 				"outputs": [],
 				"payable": false,
 				"stateMutability": "nonpayable",
-				"type": "function"
-			},
-			{
-				"constant": true,
-				"inputs": [],
-				"name": "finalizeRequest",
-				"outputs": [],
-				"payable": false,
-				"stateMutability": "view",
 				"type": "function"
 			},
 			{
@@ -174,9 +193,9 @@
 	},
 	"sources": {
 		"contracts/Campaign.sol": {
-			"keccak256": "0x49ee87ea1d6c0bacc8cee79c6ebf6d1209a0ebefd22c8675981e8fc92fccf5a4",
+			"keccak256": "0x2b061e9875b720fa6e86cb56e914f6ce307b9cd07df3b5125e01dafe3765ce7f",
 			"urls": [
-				"bzzr://45505431450964e0b56d90e1d19e04d2500f98943b54067517e8208ea5898900"
+				"bzzr://99d4fd502a9e89a5d4f03956e01a741a343f66724e4ec73c4f40457aca24d7ea"
 			]
 		}
 	},

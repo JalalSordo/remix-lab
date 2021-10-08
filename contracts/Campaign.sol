@@ -22,6 +22,9 @@ contract Campaign{
    //list of people who contributed to the project
    mapping(address=>bool) public approvers;
    
+    //As mappings don't allow reading their length we need to keep track of it with a counter
+   uint public approversCount ;
+   
    //list of all requestes created in the contract
    Request[] public requests ;
    
@@ -35,6 +38,7 @@ contract Campaign{
     function contribute() public payable {
         require(msg.value > minimumContrbution);
         approvers[msg.sender]=true;
+        approversCount++;
     }
     
      function createRequest( string description, uint amount, address recipient) public onlyManagerCanCall {
@@ -47,6 +51,7 @@ contract Campaign{
             approvalCount:0
         });
         requests.push(request);
+        
 
     }
     
@@ -54,19 +59,34 @@ contract Campaign{
         //first check if this person has the right to vote, must be in the map of approvers (people who contributed)
         require(approvers[msg.sender]);
         
+        //use storage so we can point to the refrence not a copy
+        Request storage request=requests[requestIndex];
+        
         //check if this person haven't voted before
-        require(!requests[requestIndex].approvals[msg.sender]);
+        require(!request.approvals[msg.sender]);
         
         //add a person to approvers
-        requests[requestIndex].approvals[msg.sender]=true;
+        request.approvals[msg.sender]=true;
         
         //increment teh approval count of teh request
-        requests[requestIndex].approvalCount++;
+        request.approvalCount++;
         
     }
     
-    function finalizeRequest( )  public view onlyManagerCanCall {
-        //TODO
+    function finalizeRequest(uint requestIndex ) public  onlyManagerCanCall {
+      Request storage request=requests[requestIndex];
+      
+      //make sure the requets is not already completed
+      require(!request.complete);
+      
+      //make sure at 50% of contributors have approved
+      require(request.approvalCount> (approversCount/2));
+  
+      
+      request.complete=true;
+      
+      request.recipient.transfer(request.amount);
+      
     }
     
      modifier onlyManagerCanCall() {

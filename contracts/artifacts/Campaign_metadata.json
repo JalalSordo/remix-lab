@@ -165,6 +165,10 @@
 					{
 						"name": "minimum",
 						"type": "uint256"
+					},
+					{
+						"name": "creator",
+						"type": "address"
 					}
 				],
 				"payable": false,
@@ -193,9 +197,9 @@
 	},
 	"sources": {
 		"contracts/Campaign.sol": {
-			"keccak256": "0x2b061e9875b720fa6e86cb56e914f6ce307b9cd07df3b5125e01dafe3765ce7f",
+			"keccak256": "0xafead33779897fbee7fc3195139bff1f1293a60b5aab2461c1cfa0f7a56deaa8",
 			"urls": [
-				"bzzr://99d4fd502a9e89a5d4f03956e01a741a343f66724e4ec73c4f40457aca24d7ea"
+				"bzzr://3a2ad5d89f4b6df205175cdf41f0d29dc1fda2e779210c7d2e07bf44bcd359d2"
 			]
 		}
 	},

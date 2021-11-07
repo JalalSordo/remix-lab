@@ -1,6 +1,19 @@
 
 pragma solidity ^0.4.17;
 
+contract CampaignFactory {
+    address[] public deployedCampaigns;
+
+    function createCampaign(uint minimum) public {
+        address newCampaign = new Campaign(minimum, msg.sender);
+        deployedCampaigns.push(newCampaign);
+    }
+
+    function getDeployedCampaigns() public view returns (address[]) {
+        return deployedCampaigns;
+    }
+}
+ 
 contract Campaign{
     
     struct Request{
@@ -29,9 +42,9 @@ contract Campaign{
    Request[] public requests ;
    
      
-    constructor (uint minimum) public {
+    constructor (uint minimum,address creator ) public {
         minimumContrbution = minimum;
-        manager = msg.sender;
+        manager = creator;
     }
     
     // if uou want to access to mesage value you need to state it spayable which is the amoutn of ether sent in the trns
